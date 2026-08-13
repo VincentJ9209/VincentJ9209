@@ -29,6 +29,33 @@ My engineering approach emphasizes **data quality, measurable evaluation, testin
 
 # Featured Projects｜代表作品
 
+## 🚲 [YouBike Data Pipeline](https://github.com/VincentJ9209/youbike-data-pipeline)
+
+**Data Engineering × ELT × Orchestration × CI/CD**
+
+以臺北市與新北市官方 YouBike 即時資料為來源，建立從 source normalization、冪等 PostgreSQL 寫入、dbt 資料模型與品質驗證，到 Airflow orchestration、Docker、GitHub Actions 與 Docker Hub 發布的可重現 ELT pipeline。
+
+A reproducible ELT pipeline that normalizes Taipei and New Taipei YouBike data, persists idempotent PostgreSQL snapshots, builds analytical models with dbt, orchestrates the workflow with Airflow, and validates delivery through CI/CD.
+
+### Key Evidence
+
+- Python adapters → canonical `StationSnapshot`
+- Idempotency key: `(source_city, station_id, source_updated_at)`
+- PostgreSQL 16 raw snapshot persistence
+- dbt: `4` models + `15` data-quality tests
+- Hosted CI: `8 passed`
+- dbt build: `PASS=19 WARN=0 ERROR=0`
+- Airflow 3.3.0: `extract_and_load → dbt_run → dbt_test`
+- Docker Compose + GitHub Actions + Docker Hub publishing
+
+**Focus**
+
+`Data Engineering` · `ELT` · `PostgreSQL` · `dbt` · `Apache Airflow` · `Data Quality` · `pytest` · `Docker` · `CI/CD`
+
+➡️ **[View Repository](https://github.com/VincentJ9209/youbike-data-pipeline)**
+
+---
+
 ## 🔎 [RAG Knowledge Assistant](https://github.com/VincentJ9209/rag-knowledge-assistant)
 
 **LLM / RAG × Python Backend × Evaluation**
@@ -86,15 +113,15 @@ An evidence-first computer-vision workflow for governed vehicle-image data, anno
 
 ### Backend & Data
 
-`Python` · `SQL` · `FastAPI` · `PostgreSQL` · `SQLite` · `ETL / Data Processing`
+`Python` · `SQL` · `PostgreSQL` · `dbt` · `Apache Airflow` · `FastAPI` · `SQLite` · `ETL / ELT`
 
 ### AI / ML / LLM
 
 `RAG` · `OpenAI API` · `Embeddings` · `Vector Search` · `Function Calling` · `Agentic Loop` · `YOLOv8` · `OpenCV` · `scikit-learn`
 
-### Engineering
+### Engineering & Delivery
 
-`pytest` · `Docker` · `Git` · `GitHub` · `GitHub Actions` · `CI`
+`pytest` · `Docker` · `Docker Compose` · `Docker Hub` · `Git` · `GitHub` · `GitHub Actions` · `CI/CD`
 
 ---
 
